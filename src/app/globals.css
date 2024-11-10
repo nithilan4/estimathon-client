@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+
+	:root  {
+		--background: 129 100% 95%;
+		--foreground: 129 5% 0%;
+		--card: 129 50% 90%;
+		--card-foreground: 129 5% 10%;
+		--popover: 129 100% 95%;
+		--popover-foreground: 129 100% 0%;
+		--primary: 129 100% 16%;
+		--primary-foreground: 0 0% 100%;
+		--secondary: 129 30% 70%;
+		--secondary-foreground: 0 0% 0%;
+		--muted: 91 30% 85%;
+		--muted-foreground: 129 5% 35%;
+		--accent: 91 30% 80%;
+		--accent-foreground: 129 5% 10%;
+		--destructive: 0 100% 30%;
+		--destructive-foreground: 129 5% 90%;
+		--border: 129 30% 50%;
+		--input: 129 30% 18%;
+		--ring: 129 100% 16%;
+		--radius: 0.5rem;
+	  }
+	  .dark  {
+		--background: 129 50% 5%;
+		--foreground: 129 5% 90%;
+		--card: 129 50% 0%;
+		--card-foreground: 129 5% 90%;
+		--popover: 129 50% 5%;
+		--popover-foreground: 129 5% 90%;
+		--primary: 129 100% 16%;
+		--primary-foreground: 0 0% 100%;
+		--secondary: 129 30% 10%;
+		--secondary-foreground: 0 0% 100%;
+		--muted: 91 30% 15%;
+		--muted-foreground: 129 5% 60%;
+		--accent: 91 30% 15%;
+		--accent-foreground: 129 5% 90%;
+		--destructive: 0 100% 30%;
+		--destructive-foreground: 129 5% 90%;
+		--border: 129 30% 18%;
+		--input: 129 30% 18%;
+		--ring: 129 100% 16%;
+		--radius: 0.5rem;
+	  }
+	  
+  
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground dark font-opensans;
+  }
+
+  h1, button {
+	@apply font-inconsolata font-bold
+  }
+}
