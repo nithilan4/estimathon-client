@@ -12,13 +12,13 @@ export default function Home() {
 
 	const [view, setView] = useState(1)
 	const [name, setName] = useState("")
-	const [socketIo, setSocketIo] = useState<Socket<any, any> | null>(null)
-	const [gameState, setGameState] = useState<any>(null)
+	const [socketIo, setSocketIo] = useState(null)
+	const [gameState, setGameState] = useState(null)
 	const [timeLeft, setTimeLeft] = useState<string>("")
 	const [min, setMin] = useState("")
 	const [max, setMax] = useState("")
 
-	function formatTime(milliseconds: number) {
+	function formatTime(milliseconds) {
 		const totalSeconds = milliseconds / 1000;
 		const minutes = Math.floor(totalSeconds / 60);
 		const seconds = totalSeconds % 60;
@@ -147,7 +147,7 @@ export default function Home() {
 											<div className="flex flex-col items-center flex-1 w-full gap-8 overflow-hidden">
 												<h1 className="text-2xl">{Object.keys(gameState.players).length} player(s) connected!</h1>
 												<div className="flex-1 flex flex-wrap gap-4 text-3xl font-inconsolata max-h-[10em] overflow-auto py-5">
-													{Object.keys(gameState.players).map((player: string) => (
+													{Object.keys(gameState.players).map((player) => (
 														<div key={player} className="px-6 py-4 border-4 rounded-full animate-bounce border-border">{player}</div>
 													))}
 												</div>
@@ -166,7 +166,7 @@ export default function Home() {
 																<>
 																	<h1 className="text-3xl">Leaderboard</h1>
 																	{
-																		gameState.leaderboard.map((leaderboardPlayer: any) => (
+																		gameState.leaderboard.map((leaderboardPlayer) => (
 																			<div key={leaderboardPlayer[0]} className="flex flex-row justify-between w-full">
 																				<h1 className="text-3xl">{leaderboardPlayer[0]}</h1>
 																				<p className="text-2xl">{leaderboardPlayer[1].toFixed(4)} pts</p>
@@ -184,7 +184,7 @@ export default function Home() {
 																<>
 																	<h1 className="text-2xl">Question {gameState.question.num + 1}: {gameState.question.text}</h1>
 																	<h1 className="text-3xl">{timeLeft} left</h1>
-																	<p className="text-2xl">{Object.values(gameState.players).filter((player: any) => player.answers[gameState.question.num]).length} / {Object.keys(gameState.players).length} Answered</p>
+																	<p className="text-2xl">{Object.values(gameState.players).filter((player) => player.answers[gameState.question.num]).length} / {Object.keys(gameState.players).length} Answered</p>
 																	<Button onClick={endQuestion}>Skip Wait</Button>
 																</>
 															)
