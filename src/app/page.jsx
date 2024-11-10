@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
-import { io, Socket } from "socket.io-client";
+import { io } from "socket.io-client";
 import { useToast } from "@/hooks/use-toast"
 
 export default function Home() {
@@ -55,7 +55,7 @@ export default function Home() {
 			console.log("SOCKET DISCONNECT! (reload to fix)")
 		})
 
-		socket.on("set-admin", (msg) => {
+		socket.on("set-admin", () => {
 			setView(0)
 		})
 
