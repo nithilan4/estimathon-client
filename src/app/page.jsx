@@ -14,7 +14,7 @@ export default function Home() {
 	const [name, setName] = useState("")
 	const [socketIo, setSocketIo] = useState(null)
 	const [gameState, setGameState] = useState(null)
-	const [timeLeft, setTimeLeft] = useState<string>("")
+	const [timeLeft, setTimeLeft] = useState("")
 	const [min, setMin] = useState("")
 	const [max, setMax] = useState("")
 
